@@ -12,7 +12,15 @@ The types `Casilla`, `Nonomino` and `Sudoku` are defined where:
 * A **Sudoku** can be a `Not_solution` or, a set of `Nonomino` together with a list of tuples, named `to_solve` , with the possible values that the empty squares of the board can take.
 
 
-The input is an array of integers [*a*<sub>9*i+j</sub>] where the position *a*<sub>9*i+j</sub> represents the position *b*<sub>ij</sub> of the final sudoku puzzle. The number of the tens of *a*<sub>9*i+j</sub> represents the nonomino to which it belongs and the units, the value of that position initially (if it is 0, it means that the box is empty).
+
+```haskell
+data Casilla = Casilla { pos::(Int,Int), val::Int } deriving Eq
+data Nonomino = Nonomino { elements::[Casilla] } deriving Eq
+data Sudoku = Sudoku { nonominos::[Nonomino], to_solve::[((Int,Int),[Int])]} | Not_solution deriving Eq
+```
+
+
+The input is an array of integers *a*<sub>9\*i+j</sub> where the position *(9\*i+j)* represents the position *(i, j)* of the final sudoku puzzle. The number of the tens of *a*<sub>9\*i+j</sub> represents the nonomino to which it belongs and the units, the value of that position initially (if it is 0, it means that the box is empty).
 
 
 
