@@ -8,7 +8,7 @@ To better understand the logic of the game and the orientation of the project se
 
 # Implementation explained
 
-The types `Casilla`, `Nonomino` and `Sudoku` are defined in *Estructuras.hs*:
+The `Casilla`, `Nonomino` and `Sudoku` types are defined in *Estructuras.hs*:
 * A **Casilla** is represented by its position *(Int, Int)* in the sudoku puzzle and its value 1-9, 0 if it is empty.
 * A **Nonomino** is a list of *Casilla*.
 * A **Sudoku** can be a `Not_solution` or, a set of `Nonomino` together with a list of tuples, named `to_solve` , with the possible values that the empty squares of the board can take.
